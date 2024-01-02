@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Personas</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+    {#    <link href="../static/css/main.css" rel="stylesheet">#}
 </head>
 <body>
-    <h1>Sistema de administracion de personas</h1>
-    <h2>Total de personas: {{ total_personas }}</h2>
-    <div>
+    <h1 class="text-center text-2xl">Sistema de administracion de personas</h1>
+    <h2 class="font-bold">Total de personas: {{ total_personas }}</h2>
+    <div class="bg-green-600 w-20 text-center text-white">
         <a href="{{ url_for('agregar') }}">Agregar</a>
     </div>
-    <table border="1">
+    <table class="my-2 border border-sky-500">
         <thead>
             <tr>
                 <th>ID</th>
@@ -29,9 +31,15 @@
                     <td>{{ persona.nombre }}</td>
                     <td>{{ persona.apellido }}</td>
                     <td>{{ persona.email }}</td>
-                    <td><a href="/ver/{{ persona.id }}">Ver</a></td>
-                    <td><a href="/editar/{{ persona.id }}">Editar</a></td>
-                    <td><a href="/eliminar/{{ persona.id }}">Eliminar</a></td>
+                    <td class="bg-blue-600 px-6">
+                        <a href="/ver/{{ persona.id }}">Ver</a>
+                    </td>
+                    <td class="bg-yellow-500 px-6">
+                        <a href="/editar/{{ persona.id }}">Editar</a>
+                    </td>
+                    <td class="bg-red-600 px-4">
+                        <a href="/eliminar/{{ persona.id }}">Eliminar</a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

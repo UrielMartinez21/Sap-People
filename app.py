@@ -101,6 +101,7 @@ def eliminar(id_elemento):
     # --> Se redirecciona al inicio
     return redirect(url_for('inicio'))
 
+
 # ----------------------| MAIN |---------------------- #
 if __name__ == '__main__':
     app.run()
