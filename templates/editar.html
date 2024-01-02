@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar</title>
+</head>
+<body>
+    <h1>Formulario para editar una persona</h1>
+    <form  method="post">
+        {{ forma.csrf_token() }}
+        <p>
+            {{ forma.nombre.label }}
+            {{ forma.nombre(size=30) }}
+        </p>
+        <p>
+            {{ forma.apellido.label }}
+            {{ forma.apellido(size=30) }}
+        </p>
+        <p>
+            {{ forma.email.label }}
+            {{ forma.email(size=30) }}
+        </p>
+        <p>
+            {{ forma.enviar() }}
+        </p>
+    </form>
+    <div>
+        <a href="{{ url_for('inicio') }}">Volver al inicio</a>
+    </div>
+</body>
+</html>
